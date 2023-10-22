@@ -1,0 +1,7 @@
+spring:
+  profiles:
+    active: prod
+  main:
+    web-application-type: none
+komputator:
+  server-base-url: http://localhost:8080
