@@ -14,7 +14,7 @@ public class ComputationClientImpl implements ComputationClient {
     private final RestTemplate restTemplate;
 
     @Override
-    public void startComputation(UUID id, int n) {
+    public void startComputation(UUID id, long n) {
         restTemplate.put("/computations/%s".formatted(id), Map.of("n", n));
     }
 
