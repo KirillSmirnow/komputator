@@ -2,6 +2,7 @@ package komputator.desktop.ui;
 
 import komputator.desktop.ui.utility.FontUtility;
 import komputator.desktop.ui.utility.FontUtility.Size;
+import komputator.desktop.ui.utility.IconUtility;
 
 import javax.swing.*;
 
@@ -14,6 +15,7 @@ public class ErrorFrame extends JFrame {
 
     private void configureFrame() {
         setTitle("Error!");
+        IconUtility.set(this, "/image/error.png");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(400, 200);
         setLocationRelativeTo(null);
