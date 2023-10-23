@@ -43,18 +43,23 @@ public class Main {
 
     @SneakyThrows
     private void compute(long n, IntConsumer progress, Consumer<String> result) {
-        result.accept("n = %s. Please wait...".formatted(n));
-        var id = randomUUID();
-        computationClient.startComputation(id, n);
-        while (true) {
-            var computationResult = computationClient.getComputationResult(id);
-            log.info("Progress: {}%", computationResult.getCompletionPercentage());
-            progress.accept(computationResult.getCompletionPercentage());
-            if (computationResult.isCompleted()) {
-                result.accept("Result: %s (error = %s)".formatted(computationResult.getValue(), computationResult.getError()));
-                break;
+        try {
+            result.accept("n = %s. Please wait...".formatted(n));
+            var id = randomUUID();
+            computationClient.startComputation(id, n);
+            while (true) {
+                var computationResult = computationClient.getComputationResult(id);
+                log.info("Progress: {}%", computationResult.getCompletionPercentage());
+                progress.accept(computationResult.getCompletionPercentage());
+                if (computationResult.isCompleted()) {
+                    result.accept("Result: %s (error = %s)".formatted(computationResult.getValue(), computationResult.getError()));
+                    break;
+                }
+                Thread.sleep(1000);
             }
-            Thread.sleep(1000);
+        } catch (Exception e) {
+            log.error("Error: {}", e.getMessage());
+            new ErrorFrame(e.getMessage());
         }
     }
 }
