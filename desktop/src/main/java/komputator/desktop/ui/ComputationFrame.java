@@ -53,6 +53,7 @@ public class ComputationFrame extends JFrame {
         setLayout(new GridLayout(0, 1));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 500);
+        setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
     }

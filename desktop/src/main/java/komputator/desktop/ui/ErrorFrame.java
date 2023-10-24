@@ -18,6 +18,7 @@ public class ErrorFrame extends JFrame {
         IconUtility.set(this, "/image/error.png");
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(400, 200);
+        setResizable(false);
         setLocationRelativeTo(null);
         setVisible(true);
     }
