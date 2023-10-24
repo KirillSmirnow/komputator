@@ -12,6 +12,10 @@
 
     <artifactId>desktop</artifactId>
 
+    <properties>
+        <iconType>png</iconType>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -49,17 +53,9 @@
 
                     <!-- App -->
                     <name>Komputator</name>
-                    <icon>src/main/resources/image/komputator.png</icon>
-                    <vendor>My Vendor</vendor>
-                    <copyright>My Copyright</copyright>
-                    <licenseFile>pom.xml</licenseFile>
-                    <aboutUrl>https://about-url.com</aboutUrl>
-
-                    <!-- Linux -->
-                    <linuxShortcut>true</linuxShortcut>
-                    <linuxMenuGroup>Utilities</linuxMenuGroup>
-                    <linuxAppCategory>Utilities</linuxAppCategory>
-                    <linuxDebMaintainer>mr-skyu@yandex.ru</linuxDebMaintainer>
+                    <icon>src/main/resources/image/komputator.${iconType}</icon>
+                    <vendor>Kirill</vendor>
+                    <aboutUrl>https://github.com/KirillSmirnow/komputator</aboutUrl>
 
                     <!-- Windows -->
                     <winDirChooser>true</winDirChooser>
