@@ -2,6 +2,7 @@ package komputator.desktop.ui;
 
 import komputator.desktop.ui.utility.FontUtility;
 import komputator.desktop.ui.utility.FontUtility.Size;
+import komputator.desktop.ui.utility.IconUtility;
 import komputator.desktop.ui.utility.Layouts;
 import lombok.Getter;
 import lombok.Setter;
@@ -48,6 +49,7 @@ public class ComputationFrame extends JFrame {
 
     private void configureFrame() {
         setTitle("Komputator");
+        IconUtility.set(this, "/image/komputator.png");
         setLayout(new GridLayout(0, 1));
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500, 500);

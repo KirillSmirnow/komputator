@@ -7,10 +7,14 @@
     <parent>
         <groupId>org.example</groupId>
         <artifactId>komputator</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>desktop</artifactId>
+
+    <properties>
+        <iconType>png</iconType>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -42,10 +46,23 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <!-- Build -->
                     <input>${project.build.directory}/app</input>
-                    <mainJar>${project.artifactId}-${project.version}.jar</mainJar>
+                    <mainJar>${project.build.finalName}.jar</mainJar>
                     <destination>${project.build.directory}</destination>
-                    <name>komputator</name>
+
+                    <!-- App -->
+                    <name>Komputator</name>
+                    <icon>src/main/resources/image/komputator.${iconType}</icon>
+                    <vendor>Kirill</vendor>
+                    <aboutUrl>https://github.com/KirillSmirnow/komputator</aboutUrl>
+
+                    <!-- Windows -->
+                    <winDirChooser>true</winDirChooser>
+                    <winShortcutPrompt>true</winShortcutPrompt>
+                    <winShortcut>true</winShortcut>
+                    <winMenu>true</winMenu>
+                    <winMenuGroup>Kirill</winMenuGroup>
                 </configuration>
             </plugin>
         </plugins>
