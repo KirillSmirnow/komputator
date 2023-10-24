@@ -36,7 +36,6 @@ public class ComputationFrame extends JFrame {
     private BiConsumer<Mode, Long> computeAction = (mode, n) -> log.info("Compute action: mode={}, n={}", mode, n);
 
     public ComputationFrame() {
-        configureFrame();
         add(
                 createTitleLabel(),
                 createModeSelector(),
@@ -45,6 +44,7 @@ public class ComputationFrame extends JFrame {
                 createResultLabel(),
                 createComputeButton()
         );
+        configureFrame();
     }
 
     private void configureFrame() {

@@ -9,8 +9,8 @@ import javax.swing.*;
 public class ErrorFrame extends JFrame {
 
     public ErrorFrame(String message) {
-        configureFrame();
         add(createMessageArea(message));
+        configureFrame();
     }
 
     private void configureFrame() {
