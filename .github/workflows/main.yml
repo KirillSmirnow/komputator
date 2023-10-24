@@ -20,7 +20,7 @@ jobs:
         with:
           java-version: 17
       - uses: actions/checkout@v2
-      - run: ./mvnw install
+      - run: ./mvnw install -DiconType=ico
       - uses: actions/upload-artifact@v3
         with:
           name: windows-${{ github.run_id }}
