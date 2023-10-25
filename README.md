@@ -2,7 +2,7 @@
 
 ## Desktop App
 
-### Install
+### Install / Upgrade
 
 * Download and run [suitable distribution](https://github.com/KirillSmirnow/komputator/releases)
 * On Debian the installation directory is `/opt/komputator`
